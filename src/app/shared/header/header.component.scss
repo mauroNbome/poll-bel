@@ -1,0 +1,21 @@
+nav {
+  height: 10rem;
+  font-size: 1.6rem;
+
+  img {
+    margin-left: 5rem;
+  }
+
+  ul {
+    margin-left: auto !important;
+    margin-right: 4.44%;
+
+    li:not(:last-child) {
+      margin-right: 15px;
+    }
+  }
+
+  //   a :not(:last-child) {
+  //     margin-right: 10px;
+  //   }
+}

@@ -1,0 +1,65 @@
+<div class="leftside">
+  <div class="title">Encuestas</div>
+  <div class="logo-container">
+    <img src="../../../assets/logo-login.png" />
+  </div>
+
+  <hr id="left-hr" />
+  <div class="welcome-title">Bienvenido</div>
+
+  <div class="input-container d-flex">
+    <div class="upper-input">Legajo</div>
+    <input type="text" class="form-control" />
+    <div class="upper-input">Password</div>
+    <input type="password" class="form-control" />
+
+    <button class="btn btn-primary btn-left">Login</button>
+    <div class="forgot-password">¿Olvidaste tu contraseña?</div>
+  </div>
+</div>
+
+<!-- SIDENAV only in LG sizes -->
+<div class="sidenav">
+  <div class="input-container-right">
+    <form autocomplete="off" [formGroup]="formController">
+      <div class="text-login"><h3>Autenticate:</h3></div>
+      <hr id="right-hr" />
+      <div class="form-container">
+        <div class="username-box">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Ingrese su cuenta"
+            formControlName="email"
+            [class.is-invalid]="emailNoValido"
+            autocomplete="off"
+            id="email"
+          />
+          <small *ngIf="emailNoValido" class="text-danger"
+            >Ingrese un usuario válido</small
+          >
+        </div>
+        <div class="password-box">
+          <input
+            type="password"
+            autocomplete="new-password"
+            class="form-control"
+            placeholder="Ingrese su contraseña"
+            formControlName="password"
+            [class.is-invalid]="passNoValido"
+          />
+          <small *ngIf="passNoValido" class="text-danger"
+            >La contraseña no es correcta</small
+          >
+        </div>
+        <button
+          class="btn btn-primary btn-right"
+          (click)="acceder()"
+          [disabled]="formController.status !== 'VALID'"
+        >
+          LOGIN
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
