@@ -26,12 +26,25 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Encuestas</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Perfil</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Cerrar sesión</a>
+
+      <li class="avatar" (click)="popupOpen = !popupOpen">
+        <img src="../../../assets/avatar-1.png" />
       </li>
     </ul>
   </div>
 </nav>
+
+<div class="profile-popup" *ngIf="popupOpen">
+  <div class="profile-header">
+    <div class="avatar-container">
+      <img src="../../../assets/avatar-1.png" />
+    </div>
+
+    <div class="name">Mauro Ríos</div>
+    <div class="email">mauro3311@qsyier.com</div>
+
+    <div class="edit-profile">Gestionar mi cuenta</div>
+  </div>
+
+  <div class="profile-body"></div>
+</div>
