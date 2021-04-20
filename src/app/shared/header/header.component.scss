@@ -12,9 +12,28 @@ nav {
     margin-left: auto !important;
     margin-right: 4.44%;
 
+    li {
+      cursor: pointer;
+      .active {
+        // TODO:
+      }
+
+      a {
+        color: #e8efff;
+        font-size: 1.8rem;
+        font-weight: 400;
+      }
+    }
+
+    // Hidding avatar in md sizes and below.
+    @media (max-width: 992px) {
+      .avatar {
+        display: none;
+      }
+    }
     .avatar {
       margin-left: 2rem;
-      background-color: red;
+      background-color: transparent;
       width: 4rem;
       height: 4rem;
       border-radius: 50%;
@@ -36,9 +55,14 @@ nav {
       margin-right: 15px;
     }
   }
+
+  .navbar-toggler {
+    margin-right: 4rem;
+  }
 }
 
 .profile-popup {
+  z-index: 1000;
   position: fixed;
   display: flex;
   flex-direction: column;
@@ -109,5 +133,26 @@ nav {
   }
 
   .profile-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    .logout {
+      background-color: #ffffff;
+      border: 1px solid #dadce0;
+      -webkit-border-radius: 4px;
+      border-radius: 4px;
+      display: inline-block;
+      font-size: 1.6rem;
+      width: 90%;
+      letter-spacing: 0.15px;
+      margin: 16px;
+      outline: 0;
+      padding: 10px 24px;
+      text-align: center;
+      cursor: pointer;
+      margin-top: auto;
+      margin-bottom: 2rem;
+    }
   }
 }

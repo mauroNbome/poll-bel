@@ -1,5 +1,10 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">
+  <a
+    routerLinkActive="active"
+    class="navbar-brand"
+    [routerLink]="['/home']"
+    routerLinkActive="active"
+  >
     <img
       src="../../../assets/logo-login.png"
       width="60"
@@ -7,27 +12,30 @@
       alt="ib-logo"
     />
   </a>
+
   <button
     class="navbar-toggler"
     type="button"
     data-toggle="collapse"
-    data-target="#navbarNav"
-    aria-controls="navbarNav"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
     aria-expanded="false"
     aria-label="Toggle navigation"
   >
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" id="first-item" href="#">Instituto Belgrano</a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" id="first-item" [routerLink]="['/encuesta/13']"
+          >Instituto Belgrano</a
+        >
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Encuestas</a>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/encuestas']">Encuestas</a>
       </li>
 
-      <li class="avatar" (click)="popupOpen = !popupOpen">
+      <li class="avatar nav-item" (click)="popupOpen = !popupOpen">
         <img src="../../../assets/avatar-1.png" />
       </li>
     </ul>
@@ -46,5 +54,7 @@
     <div class="edit-profile">Gestionar mi cuenta</div>
   </div>
 
-  <div class="profile-body"></div>
+  <div class="profile-body">
+    <div class="logout">Cerrar sesión</div>
+  </div>
 </div>
